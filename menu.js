@@ -129,7 +129,7 @@ function renderCategories() {
 function createProductCard(product, index) {
   const category = categories.find((item) => item.id === product.category);
   return `
-    <article class="product-card" style="--card-order: ${index}">
+    <article class="product-card product-card--${product.category}" style="--card-order: ${index}">
       <div class="product-card__body">
         <div class="product-card__heading">
           <span class="product-card__number" lang="en">${String(index + 1).padStart(2, "0")}</span>
@@ -141,7 +141,6 @@ function createProductCard(product, index) {
         </div>
         <div class="product-card__footer">
           <span class="product-card__price">${product.price} <span class="product-card__currency">ر.س</span></span>
-          <span class="product-card__detail" aria-hidden="true">↗</span>
         </div>
       </div>
     </article>
