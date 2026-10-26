@@ -145,41 +145,25 @@ a {
   font-size: 0.96rem;
 }
 
-.section-heading__stamp {
+.section-heading__logo {
   position: relative;
   z-index: 1;
-  display: flex;
-  width: 132px;
-  height: 132px;
+  display: grid;
+  width: 152px;
+  min-height: 61px;
   flex: 0 0 auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  border: 1px solid rgba(241, 232, 191, 0.4);
-  border-radius: 50%;
-  color: rgba(248, 246, 238, 0.8);
-  font-family: var(--english-font);
-  font-size: 0.47rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  transform: rotate(-11deg);
+  place-items: center;
+  padding: 10px 15px;
+  border: 1px solid rgba(241, 232, 191, 0.72);
+  border-radius: 999px;
+  background: var(--cream);
+  box-shadow: 0 8px 22px rgba(27, 34, 23, 0.16);
 }
 
-.section-heading__stamp::before {
-  position: absolute;
-  inset: 7px;
-  border: 1px dashed rgba(241, 232, 191, 0.24);
-  border-radius: 50%;
-  content: "";
-}
-
-.section-heading__stamp-mark {
-  color: var(--cream);
-  font-family: var(--english-font);
-  font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: -0.1em;
+.section-heading__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .menu-tools {
@@ -436,20 +420,8 @@ a {
   --section-accent: #d9b18a;
 }
 
-.menu-group--hot .menu-group__heading {
-  background:
-    radial-gradient(ellipse at 10% 120%, rgba(205, 157, 111, 0.16), transparent 48%),
-    linear-gradient(112deg, #382d25, #49382d 56%, #594535);
-}
-
 .menu-group--sweets {
   --section-accent: #dbb2a3;
-}
-
-.menu-group--sweets .menu-group__heading {
-  background:
-    radial-gradient(ellipse at 10% 120%, rgba(203, 141, 124, 0.16), transparent 48%),
-    linear-gradient(112deg, #392d2d, #493735 56%, #57403b);
 }
 
 .menu-group__title-wrap {
@@ -553,15 +525,15 @@ a {
 }
 
 .product-card {
-  --card-accent: #76805c;
-  --card-light: #c8d1a0;
+  --card-accent: #78845d;
+  --card-light: #d1d9a9;
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(241, 232, 191, 0.13);
   border-radius: 5px 5px 24px 5px;
   background:
-    radial-gradient(ellipse at 0% 0%, color-mix(in srgb, var(--card-accent) 38%, transparent), transparent 72%),
-    linear-gradient(138deg, #384431, #30392c 72%);
+    radial-gradient(ellipse at 0% 0%, rgba(179, 196, 133, 0.28), transparent 72%),
+    linear-gradient(138deg, #354333, #2f3d32 72%);
   box-shadow: 0 10px 24px rgba(39, 43, 32, 0.13);
   opacity: 0;
   transform: translateY(15px);
@@ -571,30 +543,6 @@ a {
     border-color 220ms ease,
     box-shadow 220ms ease;
   transition-delay: calc(min(var(--card-order), 8) * 35ms);
-}
-
-.product-card--cold {
-  --card-accent: #78845d;
-  --card-light: #d1d9a9;
-  background:
-    radial-gradient(ellipse at 0% 0%, rgba(179, 196, 133, 0.28), transparent 72%),
-    linear-gradient(138deg, #354333, #2f3d32 72%);
-}
-
-.product-card--hot {
-  --card-accent: #a97c54;
-  --card-light: #e4c39a;
-  background:
-    radial-gradient(ellipse at 0% 0%, rgba(193, 140, 91, 0.28), transparent 72%),
-    linear-gradient(138deg, #49382d, #3c3028 72%);
-}
-
-.product-card--sweets {
-  --card-accent: #a97062;
-  --card-light: #e1b9a8;
-  background:
-    radial-gradient(ellipse at 0% 0%, rgba(186, 117, 99, 0.27), transparent 72%),
-    linear-gradient(138deg, #483633, #3c302f 72%);
 }
 
 .product-card::after {
@@ -733,9 +681,23 @@ a {
 .product-card__footer {
   position: relative;
   z-index: 1;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding-top: 10px;
   border-top: 1px solid rgba(241, 232, 191, 0.15);
+}
+
+.product-card__calories {
+  display: inline-flex;
+  min-height: 35px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid color-mix(in srgb, var(--card-light) 28%, transparent);
+  border-radius: 999px;
+  color: rgba(248, 246, 238, 0.78);
+  font-family: var(--english-font);
+  font-size: 0.67rem;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
 }
 
 .product-card__price {
@@ -861,9 +823,9 @@ a {
     padding-inline: 32px;
   }
 
-  .section-heading__stamp {
-    width: 108px;
-    height: 108px;
+  .section-heading__logo {
+    width: 133px;
+    min-height: 54px;
   }
 
   .menu-tools {
@@ -911,20 +873,10 @@ a {
     font-size: 0.8rem;
   }
 
-  .section-heading__stamp {
-    width: 72px;
-    height: 72px;
-    gap: 3px;
-    font-size: 0.29rem;
-    letter-spacing: 0.1em;
-  }
-
-  .section-heading__stamp::before {
-    inset: 4px;
-  }
-
-  .section-heading__stamp-mark {
-    font-size: 1.55rem;
+  .section-heading__logo {
+    width: 88px;
+    min-height: 39px;
+    padding: 7px 9px;
   }
 
   .category-rail {
@@ -1054,6 +1006,12 @@ a {
 
   .product-card__price {
     font-size: 0.79rem;
+  }
+
+  .product-card__calories {
+    min-height: 31px;
+    padding-inline: 7px;
+    font-size: 0.56rem;
   }
 
   .product-card__currency {
