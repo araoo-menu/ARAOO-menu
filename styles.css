@@ -50,9 +50,8 @@ a {
 
 .section-heading {
   position: relative;
-  width: min(100%, 665px);
+  width: min(100%, 260px);
   margin: 0 auto 24px;
-  background: #f2e9c0;
 }
 
 .section-heading__full-logo {
@@ -729,7 +728,7 @@ a {
   }
 
   .section-heading {
-    width: 100%;
+    width: min(100%, 260px);
     margin-bottom: 17px;
   }
 
