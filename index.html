@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f2e9c0" />
+    <meta
+      name="description"
+      content="قائمة أراو للمشروبات الساخنة والباردة والحلى."
+    />
+    <title>ARAOO | منيو أراو</title>
+    <link rel="icon" href="assets/araoo-logo-cropped.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="menu.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="أراو - الصفحة الرئيسية">
+        <img src="assets/araoo-logo-cropped.png" alt="شعار أراو Araoo" />
+      </a>
+      <a class="header-link" href="#menu">
+        <span class="header-link__dot" aria-hidden="true"></span>
+        <span>اكتشف قائمتنا</span>
+        <span class="header-link__english" lang="en">EXPLORE THE MENU</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow">PRECISE ROASTING · PREMIUM TASTE</p>
+          <h1 id="hero-title">كل كوب<br />يحكي لحظة.</h1>
+          <p class="hero__description">
+            في أراو، لكل حبة حكاية، ولكل كوب لحظة تصنعها.
+          </p>
+          <a class="hero__cta" href="#menu">
+            <span>تصفّح المنيو</span>
+            <span lang="en">VIEW MENU</span>
+            <span class="hero__arrow" aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="hero__ring"></div>
+          <div class="hero__seal">
+            <span lang="en">ARAOO</span>
+            <span class="hero__seal-line"></span>
+            <span lang="en">COFFEE MOMENTS</span>
+          </div>
+          <span class="hero__bean hero__bean--one"></span>
+          <span class="hero__bean hero__bean--two"></span>
+          <span class="hero__bean hero__bean--three"></span>
+          <span class="hero__art-label" lang="en">GOOD COFFEE<br />GOOD MOMENTS</span>
+        </div>
+        <span class="hero__index" lang="en">01 / ARAOO MENU</span>
+      </section>
+
+      <section class="menu-section" id="menu" aria-labelledby="menu-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MADE FOR YOUR MOMENT</p>
+            <h2 id="menu-title">قائمة أراو</h2>
+          </div>
+          <p class="section-heading__note">
+            اختر ما يروق لك.<br />
+            <span lang="en">Find your next favorite.</span>
+          </p>
+        </div>
+
+        <div class="menu-tools">
+          <div
+            class="category-list"
+            id="category-list"
+            role="group"
+            aria-label="تصفية حسب القسم"
+          ></div>
+          <label class="search">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="10.8" cy="10.8" r="6.5"></circle>
+              <path d="m16 16 4.2 4.2"></path>
+            </svg>
+            <span class="visually-hidden">ابحث عن صنف</span>
+            <input
+              id="menu-search"
+              type="search"
+              placeholder="ابحث عن مشروب أو حلى..."
+              autocomplete="off"
+            />
+            <span class="search__english" lang="en">SEARCH</span>
+          </label>
+        </div>
+
+        <div class="menu-results" id="menu-results" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#" lang="en">araoo.</a>
+      <p>كل حبة تحكي حكاية، وكل كوب يصنع لحظة.</p>
+      <p class="footer-caption" lang="en">
+        EVERY BEAN TELLS A STORY. EVERY CUP CREATES A MOMENT.
+      </p>
+    </footer>
+  </body>
+</html>
