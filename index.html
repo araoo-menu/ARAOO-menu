@@ -18,13 +18,15 @@
       <section class="menu-section" id="menu" aria-labelledby="menu-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">MADE FOR YOUR MOMENT</p>
-            <h2 id="menu-title">قائمة ARAOO</h2>
+            <p class="eyebrow"><span class="eyebrow__dot"></span> ARAOO COFFEE · EST. 2024</p>
+            <h1 id="menu-title">قائمة <span lang="en">ARAOO</span></h1>
+            <p class="section-heading__tagline">قهوتك المفضلة، على مزاجك.</p>
           </div>
-          <p class="section-heading__note">
-            اختر ما يروق لك.<br />
-            <span lang="en">Find your next favorite.</span>
-          </p>
+          <div class="section-heading__stamp" aria-hidden="true">
+            <span>PRECISE ROASTING</span>
+            <span class="section-heading__stamp-mark">A</span>
+            <span>PREMIUM TASTE</span>
+          </div>
         </div>
 
         <div class="menu-tools">
@@ -34,20 +36,23 @@
             role="group"
             aria-label="تصفية حسب القسم"
           ></div>
-          <label class="search">
-            <svg aria-hidden="true" viewBox="0 0 24 24">
-              <circle cx="10.8" cy="10.8" r="6.5"></circle>
-              <path d="m16 16 4.2 4.2"></path>
-            </svg>
-            <span class="visually-hidden">ابحث عن صنف</span>
-            <input
-              id="menu-search"
-              type="search"
-              placeholder="ابحث عن مشروب أو حلى..."
-              autocomplete="off"
-            />
-            <span class="search__english" lang="en">SEARCH</span>
-          </label>
+          <div class="search-wrap">
+            <label class="search">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <circle cx="10.8" cy="10.8" r="6.5"></circle>
+                <path d="m16 16 4.2 4.2"></path>
+              </svg>
+              <span class="visually-hidden">ابحث عن صنف</span>
+              <input
+                id="menu-search"
+                type="search"
+                placeholder="ابحث عن مشروب أو حلى..."
+                autocomplete="off"
+              />
+              <kbd class="search__shortcut" aria-hidden="true">/</kbd>
+            </label>
+            <span class="search__english" lang="en">FIND YOUR NEXT FAVORITE</span>
+          </div>
         </div>
 
         <div class="menu-results" id="menu-results" aria-live="polite"></div>
