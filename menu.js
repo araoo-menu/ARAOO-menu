@@ -1,8 +1,23 @@
 const categories = [
   { id: "all", ar: "الكل", en: "ALL" },
-  { id: "cold", ar: "المشروبات الباردة", en: "COLD" },
-  { id: "hot", ar: "المشروبات الساخنة", en: "HOT" },
-  { id: "sweets", ar: "الحلى", en: "SWEETS" },
+  {
+    id: "cold",
+    ar: "المشروبات الباردة",
+    en: "COLD",
+    mood: "FRESHLY CHILLED",
+  },
+  {
+    id: "hot",
+    ar: "المشروبات الساخنة",
+    en: "HOT",
+    mood: "SLOW & COMFORTING",
+  },
+  {
+    id: "sweets",
+    ar: "الحلى",
+    en: "SWEETS",
+    mood: "A LITTLE INDULGENCE",
+  },
 ];
 
 const products = [
@@ -167,15 +182,19 @@ function renderProducts() {
       if (categoryProducts.length === 0) return "";
 
       return `
-        <section class="menu-group" aria-labelledby="group-${category.id}">
+        <section class="menu-group menu-group--${category.id}" aria-labelledby="group-${category.id}">
           <div class="menu-group__heading">
             <div class="menu-group__title-wrap">
+              <span class="menu-group__eyebrow" lang="en">${category.mood}</span>
               <h2 class="menu-group__title" id="group-${category.id}">
                 ${category.ar}
                 <span lang="en">${category.en}</span>
               </h2>
             </div>
-            <span class="menu-group__count">${categoryProducts.length} <strong lang="en">/ 0${index + 1}</strong></span>
+            <span class="menu-group__count">
+              <strong lang="en">0${index + 1}</strong>
+              <span><b>${categoryProducts.length}</b> أصناف<br><small lang="en">MENU PICKS</small></span>
+            </span>
           </div>
           <div class="product-grid">
             ${categoryProducts
