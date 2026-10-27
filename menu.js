@@ -20,7 +20,7 @@ const categories = [
   },
   {
     id: "sweets",
-    ar: "حلا",
+    ar: "الحلا",
     en: "SWEETS",
     mood: "A LITTLE INDULGENCE",
   },
