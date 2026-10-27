@@ -105,14 +105,14 @@ const products = [
   },
   {
     category: "drip",
-    ar: "V60 كوستاريكي بارد",
+    ar: "V60 كوستاريكا بارد",
     en: "Costa Rican V60 · Iced",
     price: 19,
     calories: 5,
   },
   {
     category: "drip",
-    ar: "V60 كوستاريكي حار",
+    ar: "V60 كوستاريكا حار",
     en: "Costa Rican V60 · Hot",
     price: 18,
     calories: 5,
