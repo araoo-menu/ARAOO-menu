@@ -37,7 +37,7 @@ const products = [
     price: 17,
     calories: 200,
   },
-  { category: "cold", ar: "ماتشا", en: "Matcha", price: 20, calories: 120 },
+  { category: "cold", ar: "ماتشا كلاود", en: "Matcha Cloud", price: 20, calories: 120 },
   { category: "cold", ar: "آيس تي أراو", en: "Araoo Iced Tea", price: 14, calories: 90 },
   { category: "cold", ar: "كركديه أراو", en: "Araoo Hibiscus", price: 12, calories: 50 },
   { category: "hot", ar: "لاتيه", en: "Hot Latte", price: 15, calories: 120 },
@@ -139,16 +139,20 @@ const products = [
     category: "sweets",
     ar: "تشيز كيك لامينغتون بالشوكولاتة",
     en: "Chocolate Lamington Cheesecake",
-    price: 11,
+    price: 10,
     calories: 310,
   },
   {
     category: "sweets",
     ar: "تشيز كيك لامينغتون توت",
     en: "Raspberry Lamington Cheesecake",
-    price: 11,
+    price: 10,
     calories: 300,
   },
+  { category: "sweets", ar: "بسبوسة", en: "Basbousa", price: 10 },
+  { category: "sweets", ar: "محموس الشوكلت", en: "Chocolate Mahmoos", price: 20 },
+  { category: "sweets", ar: "كوكيز كلاسك", en: "Classic Cookie", price: 10 },
+  { category: "sweets", ar: "لالو سلامانكا", en: "Lalo Salamanca", price: 20 },
   {
     category: "sweets",
     ar: "تشيز كيك بالشوكولاتة",
@@ -232,9 +236,13 @@ function createProductCard(product, index) {
           <p class="product-card__english" lang="en">${product.en}</p>
         </div>
         <div class="product-card__footer">
-          <span class="product-card__calories" aria-label="${product.calories} calories">
-            <span lang="en">${product.calories} cal</span>
-          </span>
+          ${
+            Number.isFinite(product.calories)
+              ? `<span class="product-card__calories" aria-label="${product.calories} calories">
+                  <span lang="en">${product.calories} cal</span>
+                </span>`
+              : ""
+          }
           <span class="product-card__price">${product.price} <span class="product-card__currency">ر.س</span></span>
         </div>
       </div>
