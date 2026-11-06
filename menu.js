@@ -149,10 +149,38 @@ const products = [
     price: 10,
     calories: 300,
   },
-  { category: "sweets", ar: "بسبوسة", en: "Basbousa", price: 10 },
-  { category: "sweets", ar: "محموس الشوكلت", en: "Chocolate Mahmoos", price: 20 },
-  { category: "sweets", ar: "كوكيز كلاسك", en: "Classic Cookie", price: 10 },
-  { category: "sweets", ar: "لالو سلامانكا", en: "Lalo Salamanca", price: 20 },
+  {
+    category: "sweets",
+    ar: "بسبوسة",
+    en: "Basbousa",
+    price: 10,
+    calories: 320,
+    estimatedCalories: true,
+  },
+  {
+    category: "sweets",
+    ar: "محموس الشوكلت",
+    en: "Chocolate Mahmoos",
+    price: 20,
+    calories: 380,
+    estimatedCalories: true,
+  },
+  {
+    category: "sweets",
+    ar: "كوكيز كلاسك",
+    en: "Classic Cookie",
+    price: 10,
+    calories: 250,
+    estimatedCalories: true,
+  },
+  {
+    category: "sweets",
+    ar: "لالو سلامانكا",
+    en: "Lalo Salamanca",
+    price: 20,
+    calories: 350,
+    estimatedCalories: true,
+  },
   {
     category: "sweets",
     ar: "تشيز كيك بالشوكولاتة",
@@ -238,8 +266,8 @@ function createProductCard(product, index) {
         <div class="product-card__footer">
           ${
             Number.isFinite(product.calories)
-              ? `<span class="product-card__calories" aria-label="${product.calories} calories">
-                  <span lang="en">${product.calories} cal</span>
+              ? `<span class="product-card__calories" aria-label="${product.estimatedCalories ? "Approximately " : ""}${product.calories} calories">
+                  <span lang="en">${product.estimatedCalories ? "~" : ""}${product.calories} cal</span>
                 </span>`
               : ""
           }
