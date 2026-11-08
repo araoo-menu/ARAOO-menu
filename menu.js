@@ -26,6 +26,7 @@ const categories = [
   },
 ];
 
+
 const products = [
   { category: "cold", ar: "أمريكانو بارد", en: "Iced Americano", price: 15, calories: 5 },
   { category: "cold", ar: "ألفريدو إسبريسو", en: "Alfredo Espresso", price: 13, calories: 5 },
@@ -150,14 +151,6 @@ const products = [
   },
   {
     category: "sweets",
-    ar: "محموس الشوكلت",
-    en: "Chocolate Mahmoos",
-    price: 20,
-    calories: 380,
-    estimatedCalories: true,
-  },
-  {
-    category: "sweets",
     ar: "كوكيز كلاسك",
     en: "Classic Cookie",
     price: 10,
@@ -221,12 +214,14 @@ const products = [
   },
 ];
 
+
 const categoryList = document.querySelector("#category-list");
 const menuResults = document.querySelector("#menu-results");
 const searchInput = document.querySelector("#menu-search");
 let activeCategory = "all";
 let groupObserver;
 let cardObserver;
+
 
 function setActiveCategory(categoryId) {
   activeCategory = categoryId;
@@ -242,6 +237,7 @@ function setActiveCategory(categoryId) {
     }
   });
 }
+
 
 function renderCategories() {
   categoryList.innerHTML = categories
@@ -261,6 +257,7 @@ function renderCategories() {
     )
     .join("");
 
+
   categoryList.querySelectorAll(".category-button").forEach((button) => {
     button.addEventListener("click", () => {
       const targetId =
@@ -273,6 +270,7 @@ function renderCategories() {
     });
   });
 }
+
 
 function createProductCard(product, index) {
   const category = categories.find((item) => item.id === product.category);
@@ -302,6 +300,7 @@ function createProductCard(product, index) {
   `;
 }
 
+
 function renderProducts() {
   const query = searchInput.value.trim().toLocaleLowerCase();
   const visibleProducts = products.filter((product) => {
@@ -311,7 +310,9 @@ function renderProducts() {
     return matchesSearch;
   });
 
+
   const visibleCategories = categories.filter((category) => category.id !== "all");
+
 
   const groups = visibleCategories
     .map((category, index) => {
@@ -319,7 +320,9 @@ function renderProducts() {
         (product) => product.category === category.id,
       );
 
+
       if (categoryProducts.length === 0) return "";
+
 
       return `
         <section class="menu-group menu-group--${category.id}" aria-labelledby="group-${category.id}">
@@ -348,19 +351,24 @@ function renderProducts() {
     })
     .join("");
 
+
   menuResults.innerHTML =
     groups ||
     `<p class="empty-state">ما لقينا أصناف تطابق بحثك.<span lang="en">No matching items found.</span></p>`;
+
 
   observeMenuGroups();
   observeProductCards();
 }
 
+
 searchInput.addEventListener("input", renderProducts);
+
 
 function observeMenuGroups() {
   groupObserver?.disconnect();
   if (!("IntersectionObserver" in window)) return;
+
 
   groupObserver = new IntersectionObserver(
     (entries) => {
@@ -380,6 +388,7 @@ function observeMenuGroups() {
   });
 }
 
+
 function observeProductCards() {
   cardObserver?.disconnect();
   const cards = menuResults.querySelectorAll(".product-card");
@@ -387,6 +396,7 @@ function observeProductCards() {
     cards.forEach((card) => card.classList.add("is-visible"));
     return;
   }
+
 
   cardObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -402,11 +412,13 @@ function observeProductCards() {
   cards.forEach((card) => cardObserver.observe(card));
 }
 
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "/" && !event.ctrlKey && !event.metaKey && !event.altKey) {
     event.preventDefault();
     searchInput.focus();
   }
+
 
   if (event.key === "Escape" && document.activeElement === searchInput) {
     searchInput.value = "";
@@ -414,6 +426,7 @@ document.addEventListener("keydown", (event) => {
     renderProducts();
   }
 });
+
 
 renderCategories();
 renderProducts();
