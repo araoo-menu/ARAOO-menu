@@ -129,25 +129,17 @@ const products = [
   { category: "sweets", ar: "تشيز كيك تمر", en: "Date Cheesecake", price: 20, calories: 350 },
   {
     category: "sweets",
-    ar: "تشيز كيك لامينغتون بالشوكولاتة",
+    ar: "لامينتغون بالشوكولاتة",
     en: "Chocolate Lamington Cheesecake",
     price: 10,
     calories: 310,
   },
   {
     category: "sweets",
-    ar: "تشيز كيك لامينغتون توت",
+    ar: "لامينغتون توت",
     en: "Raspberry Lamington Cheesecake",
     price: 10,
     calories: 300,
-  },
-  {
-    category: "sweets",
-    ar: "بسبوسة",
-    en: "Basbousa",
-    price: 10,
-    calories: 320,
-    estimatedCalories: true,
   },
   {
     category: "sweets",
