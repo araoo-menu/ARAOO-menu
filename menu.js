@@ -143,22 +143,6 @@ const products = [
   },
   {
     category: "sweets",
-    ar: "كوكيز كلاسك",
-    en: "Classic Cookie",
-    price: 10,
-    calories: 250,
-    estimatedCalories: true,
-  },
-  {
-    category: "sweets",
-    ar: "لالو سلامانكا",
-    en: "Lalo Salamanca",
-    price: 20,
-    calories: 350,
-    estimatedCalories: true,
-  },
-  {
-    category: "sweets",
     ar: "تشيز كيك بالشوكولاتة",
     en: "Chocolate Cheesecake",
     price: 20,
